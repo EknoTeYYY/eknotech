@@ -172,16 +172,16 @@
                     id="message" 
                     v-model="form.message" 
                     rows="4" 
-                    maxlength="500"
+                    maxlength="200"
                     class="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 transition-all duration-300 resize-none"
                     placeholder="Conte-nos sobre seus desafios e objetivos..."
                     required
                     @input="validateMessage"
                   ></textarea>
 
-                  <!-- Exibe o número de caracteres no formato x / 500 -->
+                  <!-- Exibe o número de caracteres no formato x / 200 -->
                   <div class="text-right text-sm text-gray-400 mt-1">
-                    <span>{{ form.message.length }} / 500 caracteres</span>
+                    <span>{{ form.message.length }} / 200 caracteres</span>
                   </div>
                 </div>
 
@@ -436,7 +436,7 @@ export default {
       }
       
       const messageParts = [
-        `Olá, meu nome é *${this.form.name}*.`,
+        `Olá, meu nome é *${this.form.name.trim()}*.`,
         '',
         roleMessage,
         '',
@@ -448,12 +448,12 @@ export default {
         'Agradeço pelo retorno.',
         '',
         'Atenciosamente,',
-        `*${this.form.name}*`
+        `*${this.form.name.trim()}*`
       ];
       
       const message = messageParts.join('\n');
       
-      const phoneNumber = '5548998054161';
+      const phoneNumber = '5548991213344';
       const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
 
