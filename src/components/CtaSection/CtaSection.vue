@@ -453,7 +453,7 @@ export default {
       
       const message = messageParts.join('\n');
       
-      const phoneNumber = '5548991213344';
+      const phoneNumber = '5548998054161';
       const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
 
