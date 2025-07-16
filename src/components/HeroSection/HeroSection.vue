@@ -24,7 +24,7 @@
         </div>
         
         <!-- Área de animação melhorada -->
-        <div class="w-full flex justify-center min-[1250px]:w-1/2">
+        <div class="hidden min-[1250px]:flex justify-center w-full min-[1250px]:w-1/2">
           <div class="relative w-full max-w-lg">
             <!-- Glow effect animado -->
             <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 rounded-2xl blur-lg opacity-75 animate-pulse"></div>
