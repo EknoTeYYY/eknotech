@@ -1,0 +1,24 @@
+{
+	# usa email se vier por env (opcional)
+	email {$CADDY_ACME_EMAIL}
+	# logs mais enxutos (opcional)
+	admin off
+}
+
+eknotech.com.br, www.eknotech.com.br {
+	encode zstd gzip
+	# arquivos gerados do build (copiados para /usr/share/caddy pela imagem)
+	root * /usr/share/caddy
+
+	# SPA fallback (Vue Router history)
+	try_files {path} /index.html
+
+	# headers básicos
+	header {
+		X-Frame-Options "SAMEORIGIN"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+	}
+
+	file_server
+}

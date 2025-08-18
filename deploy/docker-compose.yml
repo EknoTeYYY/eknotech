@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  landing:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: eknotech/landing:latest   # Portainer vai buildar localmente; se quiser, troque para usar uma imagem de registry
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      # opcional: email para Let's Encrypt
+      - CADDY_ACME_EMAIL=contato@eknotech.com.br
+    volumes:
+      # persistir certificados/estado do Caddy
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:
