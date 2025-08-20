@@ -2,26 +2,27 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# Copia apenas o necessário e instala deps
 COPY package*.json ./
 RUN npm ci --prefer-offline --no-audit --progress=false
 
-# Copia código e builda
 COPY . .
-# Se usar Vite, configure base se precisar (ex.: /)
+# Se usa Vite/Router, mantenha base padrão (/) e fallback no Caddy
 RUN npm run build
 
-# ---- Stage 2: server (Caddy) ----
+# ---- Stage 2: servidor (Caddy interno em :8080) ----
 FROM caddy:2.8-alpine
+ENV CADDY_ORIGIN_PORT=8080
+EXPOSE 8080
 
-# Passa email opcional via env -> diretiva global do Caddy
-ENV CADDY_ACME_EMAIL=""
-
-# Static files para local "padrão" do Caddy
+# arquivos estáticos produzidos no build
 COPY --from=builder /app/dist /usr/share/caddy
 
-# Caddyfile
-COPY deploy/Caddyfile /etc/caddy/Caddyfile
+# Caddyfile mínimo interno (serve /usr/share/caddy com fallback SPA)
+RUN printf ':\nencode zstd gzip\nroot * /usr/share/caddy\ntry_files {path} /index.html\nfile_server\n' \
+  | sed -e "1s/.*/:${CADDY_ORIGIN_PORT}/" > /etc/caddy/Caddyfile
 
-# Healthcheck simples (HTTP)
-HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD wget -qO- http://localhost:80/ >/dev/null 2>&1 || exit 1
+# (Opcional) healthcheck http
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
+  CMD wget -qO- http://127.0.0.1:8080/ >/dev/null 2>&1 || exit 1
+
+CMD ["caddy","run","--config","/etc/caddy/Caddyfile","--adapter","caddyfile"]
