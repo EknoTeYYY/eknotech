@@ -231,7 +231,7 @@
                     </div>
                     <div>
                       <h4 class="font-semibold text-white">Contato</h4>
-                      <p class="text-gray-400">+55 (48) 99805-4161</p>
+                      <p class="text-gray-400">+55 (48) 99114-4161</p>
                     </div>
                   </div>
                   
@@ -453,7 +453,7 @@ export default {
       
       const message = messageParts.join('\n');
       
-      const phoneNumber = '5548998054161';
+      const phoneNumber = '5548991414161';
       const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank');
 
