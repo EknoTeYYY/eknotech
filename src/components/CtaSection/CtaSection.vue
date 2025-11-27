@@ -148,19 +148,11 @@
                   <label for="interest" class="block text-sm font-medium text-gray-300 mb-2">Interesse Principal</label>
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <label class="flex items-center p-3 bg-gray-800/30 border border-gray-600/30 rounded-lg cursor-pointer hover:bg-gray-700/30 transition-colors">
-                      <input type="radio" v-model="form.interest" value="ekno-assist" class="text-purple-500 focus:ring-purple-500" />
-                      <span class="ml-3 text-gray-300">Ekno Assist</span>
+                      <input type="radio" v-model="form.interest" value="gedfy" class="text-purple-500 focus:ring-purple-500" />
+                      <span class="ml-3 text-gray-300">Gedfy</span>
                     </label>
                     <label class="flex items-center p-3 bg-gray-800/30 border border-gray-600/30 rounded-lg cursor-pointer hover:bg-gray-700/30 transition-colors">
-                      <input type="radio" v-model="form.interest" value="ekno-trading" class="text-blue-500 focus:ring-blue-500" />
-                      <span class="ml-3 text-gray-300">Ekno Trading</span>
-                    </label>
-                    <label class="flex items-center p-3 bg-gray-800/30 border border-gray-600/30 rounded-lg cursor-pointer hover:bg-gray-700/30 transition-colors">
-                      <input type="radio" v-model="form.interest" value="both" class="text-green-500 focus:ring-green-500" />
-                      <span class="ml-3 text-gray-300">Ambos os produtos</span>
-                    </label>
-                    <label class="flex items-center p-3 bg-gray-800/30 border border-gray-600/30 rounded-lg cursor-pointer hover:bg-gray-700/30 transition-colors">
-                      <input type="radio" v-model="form.interest" value="consultation" class="text-yellow-500 focus:ring-yellow-500" />
+                      <input type="radio" v-model="form.interest" value="consultation" class="text-blue-500 focus:ring-blue-500" />
                       <span class="ml-3 text-gray-300">Consultoria</span>
                     </label>
                   </div>
@@ -381,9 +373,7 @@ export default {
     // Função para mapear o valor do campo 'interest' para um valor legível
     mapInterest(value) {
       const interestMapping = {
-        'ekno-assist': 'Ekno Assist',
-        'ekno-trading': 'Ekno Trading',
-        'both': 'Ambos os produtos',
+        'gedfy': 'Gedfy',
         'consultation': 'Consultoria'
       };
       return interestMapping[value] || value;
@@ -421,10 +411,10 @@ export default {
 
       let productMessage = '';
 
-      if (this.form.interest === 'both') {
-        productMessage = `Estou interessado em conhecer mais sobre ambos os produtos, *Ekno Assist* e *Ekno Trading*, e como eles podem beneficiar nossa empresa.`;
+      if (this.form.interest === 'gedfy') {
+        productMessage = `Estou interessado em conhecer mais sobre o *Gedfy* - Gestão Eletrônica de Documentos com IA, e como ele pode beneficiar nossa empresa.`;
       } else {
-        productMessage = `Gostaria de obter mais informações sobre o produto *${this.mapInterest(this.form.interest)}* e como ele pode beneficiar nossa empresa.`;
+        productMessage = `Gostaria de obter mais informações sobre *${this.mapInterest(this.form.interest)}* e como pode beneficiar nossa empresa.`;
       }
 
       let roleMessage = "";

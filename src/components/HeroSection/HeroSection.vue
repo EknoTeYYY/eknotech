@@ -38,7 +38,7 @@
                   <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   <div class="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
-                <div class="text-xs text-gray-400 font-mono">ekno AI Terminal</div>
+                <div class="text-xs text-gray-400 font-mono">Gedfy Terminal</div>
               </div>
               
               <!-- Área principal de animação -->
@@ -183,18 +183,18 @@ const particles = ref([])
 
 // Comandos para animação de digitação
 const commands = [
-  'ekno-ai --analyze --dataset=market_data.csv',
-  'ekno-trading --backtest --strategy=momentum',
-  'ekno-assist --deploy --agents=customer_service',
-  'ekno-ai --optimize --model=neural_network'
+  'gedfy --upload --docs=contratos/*.pdf',
+  'gedfy --ai-chat "Quais contratos vencem esse mês?"',
+  'gedfy --sign --document=contrato_v2.pdf',
+  'gedfy --notify --check-expirations'
 ]
 
 const statuses = [
-  'Analisando dados de mercado...',
-  'Processando estratégias de trading...',
-  'Otimizando agentes de IA...',
-  'Executando backtests...',
-  'Gerando insights...'
+  'Processando documentos com IA...',
+  'Analisando cláusulas contratuais...',
+  'Verificando vencimentos...',
+  'Preparando assinatura digital...',
+  'Organizando workspace...'
 ]
 
 let commandIndex = 0

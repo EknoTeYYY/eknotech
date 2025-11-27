@@ -25,10 +25,8 @@
         <div>
           <h3 class="text-lg font-semibold mb-4">Produtos</h3>
           <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Ekno Assist</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Ekno Trading</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Preços</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Demonstração</a></li>
+            <li><a href="https://gedfy.com.br" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">Gedfy</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Demonstração</a></li>
           </ul>
         </div>
         
