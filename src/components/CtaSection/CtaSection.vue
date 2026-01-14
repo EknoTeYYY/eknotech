@@ -14,11 +14,6 @@
 
         <!-- Header -->
         <div class="text-center mb-16">
-          <div class="inline-flex items-center px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-full mb-6" data-scroll="fade-up">
-            <div class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-            <span class="text-sm text-gray-300 font-medium tracking-wider">CONTATO</span>
-          </div>
-
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-scroll="blur" data-delay="1">
             <span class="text-white">Pronto para</span>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600"> automatizar seu negócio?</span>

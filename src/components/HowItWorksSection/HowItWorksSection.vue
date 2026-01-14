@@ -3,7 +3,6 @@
     <div class="container">
       <!-- Header da Seção -->
       <div class="section-header">
-        <span class="section-badge" data-scroll="fade-up">Processo Transparente</span>
         <h2 class="section-title" data-scroll="blur" data-delay="1">Como Funciona</h2>
         <p class="section-description" data-scroll="fade-up" data-delay="2">
           Consultoria personalizada, não linha de produção. Cada projeto é tratado individualmente.

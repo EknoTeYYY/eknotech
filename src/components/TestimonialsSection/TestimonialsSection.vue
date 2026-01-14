@@ -11,11 +11,6 @@
     <div class="container mx-auto relative z-10">
       <!-- Header -->
       <div class="text-center mb-16">
-        <div class="inline-flex items-center px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-full mb-6" data-scroll="fade-up">
-          <div class="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></div>
-          <span class="text-sm text-gray-300 font-medium tracking-wider">DEPOIMENTOS</span>
-        </div>
-
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-scroll="blur" data-delay="1">
           <span class="text-white">O que nossos</span>
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600"> clientes dizem</span>
@@ -131,11 +126,11 @@
             <!-- Author info -->
             <div class="flex items-start mb-6">
               <div class="w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
-                <img src="/antic.png" alt="Antic" class="w-full h-full object-cover">
+                <img src="/antic.png" alt="Studio Antic" class="w-full h-full object-cover">
               </div>
               <div>
                 <h4 class="font-semibold text-white">Ellen Claudino</h4>
-                <p class="text-sm text-gray-400">Fundadora, Antic</p>
+                <p class="text-sm text-gray-400">Fundadora, Studio Antic</p>
                 <div class="flex items-center mt-1">
                   <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
                   <span class="text-xs text-gray-500">Cliente há 8 meses</span>

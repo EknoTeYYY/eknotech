@@ -8,14 +8,6 @@
 
     <!-- Conteúdo centralizado -->
     <div class="hero-content relative z-10 text-center max-w-5xl mx-auto" data-scroll="blur">
-      <!-- Badge superior -->
-      <div class="badge-container mb-8" data-scroll="scale" data-delay="1">
-        <div class="status-badge">
-          <span class="status-dot"></span>
-          Automação de Processos Empresariais
-        </div>
-      </div>
-
       <!-- Título principal -->
       <h1 class="hero-title" data-scroll="fade-up" data-delay="2">
         <span class="title-word">Automatizamos</span>
@@ -75,7 +67,7 @@ const companies = ref([
     icon: '/precifico.ia.jpeg'
   },
   {
-    name: 'Antic',
+    name: 'Studio Antic',
     icon: '/antic.png'
   },
   {
