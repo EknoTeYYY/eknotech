@@ -1,0 +1,28 @@
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset para compensar navbar fixa */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Melhorar performance do scroll */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Prevenir scroll horizontal */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Estilo para links âncora ativos */
+a[href^="#"] {
+  transition: color 0.3s ease;
+}
+
+a[href^="#"]:hover {
+  opacity: 0.8;
+}

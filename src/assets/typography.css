@@ -1,0 +1,39 @@
+/* Tipografia Global - Poppins para Headings, Inter para Body */
+
+/* Fonte padrão do body */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Poppins para todos os headings */
+h1, h2, h3, h4, h5, h6,
+.font-heading {
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em; /* Tighter letter spacing para headings */
+}
+
+/* Ajustes específicos por tamanho */
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+h3, h4 {
+  font-weight: 600;
+}
+
+/* Utilitários para forçar fontes */
+.font-body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Melhorar renderização de texto */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

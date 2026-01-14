@@ -1,41 +1,69 @@
 <template>
-  <nav class="fixed w-full z-50 bg-opacity-90 bg-gray-900 backdrop-blur-sm">
-    <div class="container mx-auto px-4 py-3">
-      <div class="flex justify-between items-center h-10">  <!-- Define a altura fixa da navbar -->
-        <div class="flex items-center">
-          <img src="../../assets/logoMenu.png" alt="EknoTech" class="h-20 md:h-24" draggable="false" style="user-select: none;">
-        </div>
-        
+  <nav class="navbar-wrapper">
+    <div class="navbar-floating">
+      <div class="navbar-content">
+        <!-- Logo -->
+        <a href="#" @click.prevent="handleLogoClick" class="navbar-logo" style="cursor: pointer;">
+          <img src="../../assets/logoMenu.png" alt="EknoTech" class="logo-img" draggable="false">
+        </a>
+
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex space-x-8">
-          <a href="#products" class="text-gray-300 hover:text-white transition-colors">Produtos</a>
-          <a href="#features" class="text-gray-300 hover:text-white transition-colors">Recursos</a>
-          <a href="#testimonials" class="text-gray-300 hover:text-white transition-colors">Depoimentos</a>
-          <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contato</a>
+        <div class="navbar-links">
+          <a href="#como-funciona" class="nav-link">Como Funciona</a>
+          <a href="#servicos" class="nav-link">Serviços</a>
+          <a href="#depoimentos" class="nav-link">Depoimentos</a>
+          <a href="#contato" class="nav-link">Contato</a>
         </div>
-        
+
+        <!-- CTA Button -->
+        <div class="navbar-cta">
+          <a href="#contato" class="btn-cta-glow">
+            <span class="glow-effect"></span>
+            <span class="btn-text">Entrar em Contato</span>
+          </a>
+        </div>
+
         <!-- Mobile Navigation Button -->
-        <div class="md:hidden">
-          <button @click="isOpen = !isOpen" class="text-gray-300 hover:text-white focus:outline-none">
-            <i v-if="!isOpen" class="fas fa-bars h-6 w-6"></i>
-            <i v-else class="fas fa-times h-6 w-6"></i>
+        <div class="mobile-menu-toggle">
+          <button @click="isOpen = !isOpen" class="mobile-menu-btn">
+            <span class="hamburger-line" :class="{ 'open': isOpen }"></span>
+            <span class="hamburger-line" :class="{ 'open': isOpen }"></span>
+            <span class="hamburger-line" :class="{ 'open': isOpen }"></span>
           </button>
         </div>
       </div>
-      
-      <!-- Mobile Navigation Menu -->
-      <div v-if="isOpen" class="md:hidden mt-2 py-2 space-y-2">
-        <a href="#products" @click="isOpen = false" class="block text-gray-300 hover:text-white transition-colors">Produtos</a>
-        <a href="#features" @click="isOpen = false" class="block text-gray-300 hover:text-white transition-colors">Recursos</a>
-        <a href="#testimonials" @click="isOpen = false" class="block text-gray-300 hover:text-white transition-colors">Depoimentos</a>
-        <a href="#contact" @click="isOpen = false" class="block text-gray-300 hover:text-white transition-colors">Contato</a>
-      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <Transition name="dropdown">
+        <div v-if="isOpen" class="mobile-dropdown">
+          <nav class="mobile-dropdown-nav">
+            <a href="#como-funciona" @click="isOpen = false" class="mobile-dropdown-link">Como Funciona</a>
+            <a href="#servicos" @click="isOpen = false" class="mobile-dropdown-link">Serviços</a>
+            <a href="#depoimentos" @click="isOpen = false" class="mobile-dropdown-link">Depoimentos</a>
+            <a href="#contato" @click="isOpen = false" class="mobile-dropdown-link">Contato</a>
+            <a href="#contato" @click="isOpen = false" class="mobile-dropdown-cta">Entrar em Contato</a>
+          </nav>
+        </div>
+      </Transition>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, inject } from 'vue'
 
 const isOpen = ref(false)
+const restartPage = inject('restartPage', () => {
+  // Fallback se não estiver disponível
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+})
+
+const handleLogoClick = () => {
+  isOpen.value = false // Fechar menu mobile se estiver aberto
+  restartPage()
+}
 </script>
+
+<style scoped>
+@import './NavBar.css';
+</style>

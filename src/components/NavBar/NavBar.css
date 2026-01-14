@@ -1,0 +1,442 @@
+/* ========================================
+   NAVBAR WRAPPER - CONTAINER PRINCIPAL
+   ======================================== */
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* ========================================
+   NAVBAR FLOATING - CONTAINER FLUTUANTE
+   ======================================== */
+.navbar-floating {
+  max-width: 1100px;
+  width: 92%;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 24px;
+  pointer-events: auto;
+  transition: all 0.3s ease;
+}
+
+.navbar-floating:hover {
+  background: rgba(15, 15, 15, 0.3);
+  border-color: rgba(124, 58, 237, 0.2);
+}
+
+/* ========================================
+   NAVBAR CONTENT - LAYOUT INTERNO
+   ======================================== */
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 52px;
+  user-select: none;
+}
+
+/* Links container */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex: 1;
+  justify-content: center;
+}
+
+/* CTA container */
+.navbar-cta {
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile menu toggle - escondido no desktop */
+.mobile-menu-toggle {
+  display: none;
+}
+
+/* Mobile dropdown - escondido por padrão */
+.mobile-dropdown {
+  display: none;
+}
+
+/* ========================================
+   NAVIGATION LINKS
+   ======================================== */
+.nav-link {
+  color: #d4d4d4;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #7c3aed;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ========================================
+   BOTÃO CTA COM INNER GLOW DESLIZANTE
+   ======================================== */
+.btn-cta-glow {
+  position: relative;
+  padding: 8px 20px;
+  background: #0a0a0a;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #7c3aed;
+  white-space: nowrap;
+}
+
+/* Glow deslizante interno */
+.btn-cta-glow::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 150%;
+  top: -25%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(167, 139, 250, 0.15) 20%,
+    rgba(167, 139, 250, 0.3) 50%,
+    rgba(167, 139, 250, 0.15) 80%,
+    transparent 100%
+  );
+  animation: slide-glow 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes slide-glow {
+  0%, 100% {
+    transform: translateX(-150px);
+  }
+  50% {
+    transform: translateX(250px);
+  }
+}
+
+.btn-text {
+  position: relative;
+  z-index: 1;
+}
+
+.glow-effect {
+  display: none;
+}
+
+.btn-cta-glow:hover {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+}
+
+/* ========================================
+   MOBILE MENU
+   ======================================== */
+.mobile-menu-btn {
+  color: #a1a1a1;
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-menu-btn:hover {
+  color: #ffffff;
+}
+
+.mobile-menu {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-link {
+  color: #a1a1a1;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 8px 0;
+}
+
+.mobile-link:hover {
+  color: #ffffff;
+}
+
+.btn-cta-mobile {
+  display: block;
+  margin-top: 8px;
+  padding: 12px 24px;
+  background: #7c3aed;
+  color: #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-cta-mobile:hover {
+  background: #6d28d9;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 1024px) {
+  .navbar-links {
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    padding: 10px 0;
+  }
+
+  .navbar-floating {
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    padding: 10px 14px;
+    background: rgba(15, 15, 15, 0.85);
+    margin: 0 16px;
+  }
+
+  .navbar-content {
+    justify-content: space-between;
+  }
+
+  .logo-img {
+    height: 44px;
+  }
+
+  /* Esconder elementos desktop */
+  .navbar-links,
+  .navbar-cta {
+    display: none !important;
+  }
+
+  /* Mostrar menu mobile */
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .mobile-dropdown {
+    display: block;
+  }
+
+  /* Mobile Menu Button - Hamburguer */
+  .mobile-menu-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    position: relative;
+    z-index: 100;
+  }
+
+  .hamburger-line {
+    width: 18px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+    display: block;
+    position: relative;
+  }
+
+  .hamburger-line:nth-child(1).open {
+    transform: rotate(45deg);
+    top: 7px;
+  }
+
+  .hamburger-line:nth-child(2).open {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  .hamburger-line:nth-child(3).open {
+    transform: rotate(-45deg);
+    top: -7px;
+  }
+
+  .mobile-menu-btn:hover .hamburger-line {
+    background: #7c3aed;
+  }
+
+  /* Mobile Dropdown Menu */
+  .mobile-dropdown {
+    margin-top: 12px;
+    background: rgba(15, 15, 15, 0.95);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+  }
+
+  .mobile-dropdown-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .mobile-dropdown-link {
+    padding: 14px 16px;
+    color: #d4d4d4;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+  }
+
+  .mobile-dropdown-link:hover {
+    color: #ffffff;
+    background: rgba(124, 58, 237, 0.1);
+  }
+
+  .mobile-dropdown-cta {
+    margin-top: 8px;
+    padding: 12px 16px;
+    background: #7c3aed;
+    color: #ffffff;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-dropdown-cta:hover {
+    background: #6d28d9;
+    transform: translateY(-1px);
+  }
+
+  /* Dropdown Transition */
+  .dropdown-enter-active,
+  .dropdown-leave-active {
+    transition: all 0.3s ease;
+  }
+
+  .dropdown-enter-from,
+  .dropdown-leave-to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .dropdown-enter-to,
+  .dropdown-leave-from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-wrapper {
+    padding: 8px 0;
+  }
+
+  .navbar-floating {
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+    padding: 8px 12px;
+    margin: 0 12px;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+
+  .mobile-menu-btn {
+    width: 36px;
+    height: 36px;
+    gap: 4px;
+  }
+
+  .hamburger-line {
+    width: 16px;
+  }
+
+  .hamburger-line:nth-child(1).open {
+    transform: rotate(45deg);
+    top: 6px;
+  }
+
+  .hamburger-line:nth-child(3).open {
+    transform: rotate(-45deg);
+    top: -6px;
+  }
+
+  .mobile-dropdown-link {
+    font-size: 0.875rem;
+    padding: 12px 14px;
+  }
+
+  .mobile-dropdown-cta {
+    font-size: 0.875rem;
+    padding: 11px 14px;
+  }
+}

@@ -1,0 +1,141 @@
+/* ========================================
+   SCROLL ANIMATIONS - CSS PURO
+   Animações suaves e elegantes sem GSAP
+   ======================================== */
+
+/* Estado inicial - elementos invisíveis antes de animar */
+[data-scroll] {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estado visível - aplicado quando elemento entra na viewport */
+[data-scroll].is-visible {
+  opacity: 1;
+}
+
+/* ========================================
+   FADE UP - Entrada de baixo para cima
+   ======================================== */
+[data-scroll="fade-up"] {
+  transform: translateY(60px);
+}
+
+[data-scroll="fade-up"].is-visible {
+  transform: translateY(0);
+}
+
+/* ========================================
+   SLIDE LEFT - Entrada da esquerda
+   ======================================== */
+[data-scroll="slide-left"] {
+  transform: translateX(-60px);
+}
+
+[data-scroll="slide-left"].is-visible {
+  transform: translateX(0);
+}
+
+/* ========================================
+   SLIDE RIGHT - Entrada da direita
+   ======================================== */
+[data-scroll="slide-right"] {
+  transform: translateX(60px);
+}
+
+[data-scroll="slide-right"].is-visible {
+  transform: translateX(0);
+}
+
+/* ========================================
+   SCALE - Crescimento com fade
+   ======================================== */
+[data-scroll="scale"] {
+  transform: scale(0.9);
+}
+
+[data-scroll="scale"].is-visible {
+  transform: scale(1);
+}
+
+/* ========================================
+   SCALE UP - Crescimento de baixo
+   ======================================== */
+[data-scroll="scale-up"] {
+  transform: translateY(40px) scale(0.95);
+}
+
+[data-scroll="scale-up"].is-visible {
+  transform: translateY(0) scale(1);
+}
+
+/* ========================================
+   BLUR - Efeito de desfoque
+   ======================================== */
+[data-scroll="blur"] {
+  filter: blur(10px);
+  transform: translateY(30px) scale(0.98);
+}
+
+[data-scroll="blur"].is-visible {
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+
+/* ========================================
+   DELAYS - Para sequência de animações
+   ======================================== */
+[data-scroll][data-delay="1"] {
+  transition-delay: 0.1s;
+}
+
+[data-scroll][data-delay="2"] {
+  transition-delay: 0.2s;
+}
+
+[data-scroll][data-delay="3"] {
+  transition-delay: 0.3s;
+}
+
+[data-scroll][data-delay="4"] {
+  transition-delay: 0.4s;
+}
+
+[data-scroll][data-delay="5"] {
+  transition-delay: 0.5s;
+}
+
+[data-scroll][data-delay="6"] {
+  transition-delay: 0.6s;
+}
+
+/* ========================================
+   DURATIONS - Velocidades diferentes
+   ======================================== */
+[data-scroll][data-duration="fast"] {
+  transition-duration: 0.5s;
+}
+
+[data-scroll][data-duration="slow"] {
+  transition-duration: 1.2s;
+}
+
+/* ========================================
+   RESPONSIVE - Desabilita em mobile se necessário
+   ======================================== */
+@media (max-width: 768px) {
+  /* Animações mais rápidas em mobile */
+  [data-scroll] {
+    transition-duration: 0.6s;
+  }
+}
+
+/* Reduz movimento para usuários com preferência de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  [data-scroll] {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

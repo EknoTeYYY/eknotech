@@ -1,0 +1,152 @@
+/* ========================================
+   COMPANIES SECTION - CARROSSEL
+   ======================================== */
+.companies-section {
+  background: #000000;
+  padding: 60px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.companies-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+.companies-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.companies-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ========================================
+   CAROUSEL - ANIMAÇÃO INFINITA
+   ======================================== */
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.carousel-track {
+  display: flex;
+  gap: 48px;
+  animation: scroll-left 30s linear infinite;
+  width: fit-content;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ========================================
+   COMPANY LOGOS
+   ======================================== */
+.company-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  min-width: 160px;
+  height: 60px;
+}
+
+.company-logo img {
+  max-width: 140px;
+  max-height: 50px;
+  width: auto;
+  height: auto;
+  opacity: 0.5;
+  filter: grayscale(100%) brightness(1.2);
+  transition: all 0.3s ease;
+  user-select: none;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.company-logo:hover img {
+  opacity: 1;
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.1);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .companies-section {
+    padding: 40px 0 60px;
+  }
+
+  .companies-header {
+    margin-bottom: 32px;
+  }
+
+  .companies-title {
+    font-size: 0.8125rem;
+  }
+
+  .carousel-track {
+    gap: 32px;
+    animation-duration: 20s;
+  }
+
+  .company-logo {
+    min-width: 120px;
+    height: 48px;
+  }
+
+  .company-logo img {
+    max-width: 100px;
+    max-height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .companies-section {
+    padding: 32px 0 48px;
+  }
+
+  .carousel-track {
+    gap: 24px;
+  }
+
+  .company-logo {
+    min-width: 100px;
+    padding: 0 8px;
+  }
+}
