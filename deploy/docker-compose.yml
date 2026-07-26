@@ -6,6 +6,7 @@ services:
       context: ..
       dockerfile: deploy/Dockerfile
     image: eknotech/landing:latest
+    container_name: eknotech-landing
     restart: unless-stopped
     expose:
       - "8080"
