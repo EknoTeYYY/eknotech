@@ -10,19 +10,20 @@
     <div class="hero-content relative z-10 text-center max-w-5xl mx-auto" data-scroll="blur">
       <!-- Título principal -->
       <h1 class="hero-title" data-scroll="fade-up" data-delay="2">
-        <span class="title-word">Automatizamos</span>
-        <span class="title-word">os</span>
-        <span class="title-word">processos</span>
-        <span class="title-word">que</span>
-        <span class="title-word">travam</span>
-        <span class="title-word">o</span>
-        <span class="title-word">seu</span>
-        <span class="title-word">negócio</span>
+        <span class="title-word">Marketing</span>
+        <span class="title-word">e</span>
+        <span class="title-word">tecnologia</span>
+        <span class="title-word">para</span>
+        <span class="title-word">imobiliárias</span>
+        <span class="title-word">venderem</span>
+        <span class="title-word">mais</span>
       </h1>
 
       <!-- Subtítulo -->
       <p class="hero-subtitle" data-scroll="fade-up" data-delay="3">
-        Nada de templates genéricos. Entendemos como sua operação funciona e criamos automações sob medida — com suporte contínuo e contato direto com quem desenvolve.
+        Vídeos profissionais dos seus imóveis e tráfego pago que gera leads todos os dias.<br>
+        Atendimento com IA 24/7 e gestão de contratos.<br>
+        Um ecossistema completo de growth em um só parceiro.
       </p>
 
       <!-- CTAs -->

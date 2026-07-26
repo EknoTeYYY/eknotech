@@ -16,13 +16,13 @@
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-scroll="blur" data-delay="1">
             <span class="text-white">Pronto para</span>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600"> automatizar seu negócio?</span>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600"> vender mais imóveis?</span>
           </h2>
 
           <div class="w-32 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mb-8" data-scroll="scale" data-delay="2"></div>
 
           <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed" data-scroll="fade-up" data-delay="3">
-            Agende um diagnóstico gratuito e descubra quais processos da sua empresa podem ser automatizados — <span class="text-purple-400 font-semibold">sem compromisso</span>.
+            Agende um diagnóstico gratuito e descubra como conteúdo, tráfego e IA podem transformar a captação da sua imobiliária — <span class="text-purple-400 font-semibold">sem compromisso</span>.
           </p>
         </div>
 
@@ -76,7 +76,7 @@
                   </div>
                   <div>
                     <h4 class="font-semibold text-white mb-1">Diagnóstico Gratuito</h4>
-                    <p class="text-gray-400 text-sm">Mapeamos seus processos e identificamos oportunidades de automação — sem custo.</p>
+                    <p class="text-gray-400 text-sm">Analisamos sua captação e atendimento e mostramos onde estão as oportunidades — sem custo.</p>
                   </div>
                 </div>
 
@@ -86,7 +86,7 @@
                   </div>
                   <div>
                     <h4 class="font-semibold text-white mb-1">Proposta Personalizada</h4>
-                    <p class="text-gray-400 text-sm">Escopo e investimento baseados na sua realidade, não em pacotes genéricos.</p>
+                    <p class="text-gray-400 text-sm">Plano Growth adequado ao momento da sua operação, não pacote genérico.</p>
                   </div>
                 </div>
 

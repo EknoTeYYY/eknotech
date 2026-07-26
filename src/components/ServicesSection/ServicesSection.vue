@@ -19,7 +19,8 @@
         <div class="w-32 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mb-8" data-scroll="scale" data-delay="2"></div>
 
         <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed" data-scroll="fade-up" data-delay="3">
-          <span class="text-purple-400 font-semibold">Automatizamos o que trava o seu negócio</span> com soluções sob medida, não templates genéricos
+          <span class="text-purple-400 font-semibold">Um ecossistema completo de growth imobiliário.</span><br>
+          Conteúdo, tráfego, IA e gestão em um só parceiro.
         </p>
       </div>
 
@@ -37,9 +38,9 @@
               </svg>
             </div>
 
-            <h3 class="text-2xl font-bold text-white mb-4">Automação de Processos</h3>
+            <h3 class="text-2xl font-bold text-white mb-4">Criação de Conteúdo</h3>
             <p class="text-gray-400 leading-relaxed">
-              Transformamos tarefas manuais e repetitivas em fluxos automatizados. Elimina retrabalho e erros humanos, liberando sua equipe para atividades estratégicas.
+              Vídeos profissionais dos seus imóveis a partir das fotos que você já tem — zero logística. Entrega em até 48h, em formato vertical e horizontal, prontos para redes, portais e anúncios.
             </p>
           </div>
         </div>
@@ -55,9 +56,9 @@
               </svg>
             </div>
 
-            <h3 class="text-2xl font-bold text-white mb-4">Integração de Sistemas</h3>
+            <h3 class="text-2xl font-bold text-white mb-4">Tráfego Pago</h3>
             <p class="text-gray-400 leading-relaxed">
-              Conectamos as ferramentas que sua empresa já usa: CRMs, ERPs, planilhas, WhatsApp, e-mail, APIs. Dados sincronizados em tempo real, sem copiar e colar.
+              Campanhas no Meta Ads e Google Ads para gerar leads qualificados todos os dias. Otimização semanal e relatório mensal transparente: investimento, custo por lead e resultados — sem caixa preta.
             </p>
           </div>
         </div>
@@ -73,9 +74,9 @@
               </svg>
             </div>
 
-            <h3 class="text-2xl font-bold text-white mb-4">Automações com IA</h3>
+            <h3 class="text-2xl font-bold text-white mb-4">Agente de WhatsApp com IA</h3>
             <p class="text-gray-400 leading-relaxed">
-              Classificação e triagem automática, geração de respostas e conteúdo, análise inteligente de informações. IA aplicada onde faz sentido, não por modismo.
+              Atendimento 24/7 que responde na hora, qualifica o interesse e coleta os dados do cliente. Sua equipe recebe o lead já filtrado — região, faixa de preço e finalidade — pronto para fechar.
             </p>
           </div>
         </div>
@@ -91,9 +92,9 @@
               </svg>
             </div>
 
-            <h3 class="text-2xl font-bold text-white mb-4">Workflows Personalizados</h3>
+            <h3 class="text-2xl font-bold text-white mb-4">Automação de Redes Sociais</h3>
             <p class="text-gray-400 leading-relaxed">
-              Desenvolvidos especificamente para sua operação. Nada de templates genéricos adaptados. A automação se adapta ao seu processo, não o contrário.
+              Agendamento de posts e respostas automáticas de primeiros contatos. Presença constante no Instagram sem consumir o tempo da sua equipe de vendas.
             </p>
           </div>
         </div>
@@ -109,9 +110,9 @@
               </svg>
             </div>
 
-            <h3 class="text-2xl font-bold text-white mb-4">Monitoramento & Suporte</h3>
+            <h3 class="text-2xl font-bold text-white mb-4">Gestão de Contratos</h3>
             <p class="text-gray-400 leading-relaxed">
-              Acompanhamento contínuo do funcionamento, correção rápida de problemas, ajustes e melhorias conforme necessidade. Contato direto com quem desenvolve.
+              Sistema próprio da eknotech para organizar contratos de aluguel e documentos da operação. Prazos, renovações e arquivos centralizados — sem planilha perdida.
             </p>
           </div>
         </div>
@@ -129,7 +130,7 @@
 
             <h3 class="text-2xl font-bold text-white mb-4">Consultoria & Diagnóstico</h3>
             <p class="text-gray-400 leading-relaxed">
-              Mapeamento dos processos atuais, identificação de gargalos e oportunidades, proposta personalizada com escopo claro. Diagnóstico gratuito sem compromisso.
+              Análise da sua captação e atendimento atuais, identificação de gargalos e proposta com metas claras. Diagnóstico gratuito, sem compromisso.
             </p>
           </div>
         </div>
@@ -139,7 +140,7 @@
       <!-- CTA Section -->
       <div class="text-center mt-16" data-scroll="fade-up">
         <p class="text-gray-400 mb-6 text-lg">
-          Pronto para automatizar o que trava o seu negócio?
+          Pronto para transformar a captação e as vendas da sua imobiliária?
         </p>
         <a href="#contato" class="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-600 hover:from-purple-500 hover:to-purple-500 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/50">
           Solicitar Proposta

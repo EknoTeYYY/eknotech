@@ -18,7 +18,8 @@ EXPOSE 8080
 COPY --from=builder /app/dist /usr/share/caddy
 
 # Caddyfile mínimo interno (serve /usr/share/caddy com fallback SPA)
-RUN printf ':\nencode zstd gzip\nroot * /usr/share/caddy\ntry_files {path} /index.html\nfile_server\n' \
+# {path}.html permite links limpos como /growth -> growth.html
+RUN printf ':\nencode zstd gzip\nroot * /usr/share/caddy\ntry_files {path} {path}.html /index.html\nfile_server\n' \
   | sed -e "1s/.*/:${CADDY_ORIGIN_PORT}/" > /etc/caddy/Caddyfile
 
 # (Opcional) healthcheck http

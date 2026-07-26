@@ -18,7 +18,7 @@
             <img src="/logoMenu.png" alt="Eknotech" class="h-16 w-auto mb-4">
           </div>
           <p class="text-gray-400 leading-relaxed">
-            Menos tarefas manuais. Mais tempo pro que importa.
+            Marketing e tecnologia para o mercado imobiliário vender mais.
           </p>
 
           <!-- Redes Sociais -->
@@ -89,20 +89,20 @@
           <h3 class="text-lg font-bold text-white mb-6">Soluções</h3>
           <ul class="space-y-3">
             <li class="text-gray-400 flex items-start">
-              <i class="fas fa-bolt text-purple-400 text-sm mt-1 mr-2"></i>
-              <span>Automação de Processos</span>
+              <i class="fas fa-video text-purple-400 text-sm mt-1 mr-2"></i>
+              <span>Criação de Conteúdo</span>
             </li>
             <li class="text-gray-400 flex items-start">
-              <i class="fas fa-link text-purple-400 text-sm mt-1 mr-2"></i>
-              <span>Integração de Sistemas</span>
+              <i class="fas fa-chart-line text-purple-400 text-sm mt-1 mr-2"></i>
+              <span>Tráfego Pago</span>
             </li>
             <li class="text-gray-400 flex items-start">
               <i class="fas fa-brain text-purple-400 text-sm mt-1 mr-2"></i>
-              <span>Automações com IA</span>
+              <span>Automação com IA</span>
             </li>
             <li class="text-gray-400 flex items-start">
-              <i class="fas fa-search text-purple-400 text-sm mt-1 mr-2"></i>
-              <span>Consultoria & Diagnóstico</span>
+              <i class="fas fa-file-contract text-purple-400 text-sm mt-1 mr-2"></i>
+              <span>Gestão de Contratos</span>
             </li>
           </ul>
         </div>
