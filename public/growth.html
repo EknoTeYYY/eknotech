@@ -38,7 +38,7 @@
   h1, h2, h3, .num { font-family: Poppins, Inter, sans-serif; }
 
   .slide {
-    width: 100vw; height: 100vh; scroll-snap-align: start;
+    width: 100%; height: 100vh; scroll-snap-align: start;
     display: flex; flex-direction: column; justify-content: center;
     padding: 7vh 9vw; position: relative; overflow: hidden;
   }
@@ -179,6 +179,24 @@
   }
   .rodape-slide.oculto { opacity: 0; }
   .rodape-slide img { height: 26px; opacity: .9; }
+
+  /* ===== Mobile (WhatsApp) — slides viram fluxo contínuo, sem corte ===== */
+  @media (max-width: 768px) {
+    html { scroll-snap-type: none; }
+    .slide {
+      height: auto; min-height: 100vh; min-height: 100svh;
+      padding: 56px 6vw; overflow: visible;
+    }
+    .capa img.logo { width: min(300px, 72vw); }
+    .cards.g2, .cards.g3, .cards.g4, .nums, .timeline { grid-template-columns: 1fr; }
+    .nums { margin-top: 30px; }
+    .cards { margin-top: 28px; }
+    .plano.destaque { order: -1; }
+    .contato-grid { flex-direction: column; align-items: stretch; }
+    .contato-item { width: 100%; }
+    .video-exemplo video { height: min(58vh, 480px); }
+    .rodape-slide { display: none; }
+  }
 
   @media print {
     html { scroll-snap-type: none; }
