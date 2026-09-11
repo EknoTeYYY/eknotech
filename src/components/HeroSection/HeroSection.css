@@ -173,7 +173,7 @@
 }
 
 /* ========================================
-   COMPANIES CAROUSEL INLINE
+   PRODUCTS STRIP INLINE
    ======================================== */
 .companies-carousel-inline {
   margin-top: 80px;
@@ -203,7 +203,7 @@
 .carousel-track-inline {
   display: flex;
   gap: 48px;
-  animation: scroll-left 35s linear infinite;
+  animation: scroll-left 100s linear infinite;
   width: fit-content;
 }
 
@@ -227,21 +227,43 @@
   gap: 12px;
   padding: 0 8px;
   min-width: fit-content;
+  text-decoration: none;
   transition: all 0.3s ease;
   transform-style: preserve-3d;
   will-change: transform;
   cursor: pointer;
 }
 
-.company-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  opacity: 0.5;
-  filter: grayscale(100%) brightness(1.2);
+.company-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
   transition: all 0.3s ease;
-  user-select: none;
-  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.company-icon-box svg {
+  width: 20px;
+  height: 20px;
+  color: #a78bfa;
+}
+
+.company-logo-strip {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.company-item-inline:hover .company-logo-strip {
+  opacity: 1;
 }
 
 .company-name {
@@ -252,14 +274,14 @@
   transition: all 0.3s ease;
 }
 
-.company-item-inline:hover .company-icon {
+.company-item-inline:hover .company-icon-box {
   opacity: 1;
-  filter: grayscale(0%) brightness(1);
-  transform: scale(1.15);
+  border-color: #7c3aed;
+  transform: scale(1.1);
 }
 
 .company-item-inline:hover .company-name {
-  color: #9ca3af;
+  color: #ffffff;
 }
 
 /* ========================================
@@ -328,7 +350,7 @@
 
   .carousel-track-inline {
     gap: 28px;
-    animation-duration: 25s;
+    animation-duration: 80s;
   }
 
   .company-item-inline {
@@ -336,13 +358,22 @@
     padding: 0 6px;
   }
 
-  .company-icon {
-    width: 40px;
-    height: 40px;
+  .company-icon-box {
+    width: 34px;
+    height: 34px;
+  }
+
+  .company-icon-box svg {
+    width: 16px;
+    height: 16px;
   }
 
   .company-name {
     font-size: 0.875rem;
+  }
+
+  .company-logo-strip {
+    height: 18px;
   }
 }
 
@@ -397,7 +428,7 @@
 
   .carousel-track-inline {
     gap: 20px;
-    animation-duration: 20s;
+    animation-duration: 64s;
   }
 
   .company-item-inline {
@@ -405,12 +436,21 @@
     padding: 0 4px;
   }
 
-  .company-icon {
-    width: 36px;
-    height: 36px;
+  .company-icon-box {
+    width: 30px;
+    height: 30px;
+  }
+
+  .company-icon-box svg {
+    width: 14px;
+    height: 14px;
   }
 
   .company-name {
     font-size: 0.75rem;
+  }
+
+  .company-logo-strip {
+    height: 15px;
   }
 }

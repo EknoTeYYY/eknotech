@@ -9,9 +9,13 @@ export function useScrollAnimation() {
 
   const initScrollAnimations = () => {
     // Configuração do observer - quando 20% do elemento está visível
+    // rootMargin baixo (não -100px): com o snap-scroll pulando direto para o
+    // topo de cada seção (em vez de rolar gradualmente), um elemento que caia
+    // nos últimos ~100px da tela nunca seria considerado "visível" e ficaria
+    // preso em opacity:0 para sempre.
     const observerOptions = {
       threshold: 0.2, // 20% do elemento precisa estar visível
-      rootMargin: '0px 0px -100px 0px' // Começa a animar um pouco antes
+      rootMargin: '0px 0px -20px 0px'
     }
 
     observer = new IntersectionObserver((entries) => {

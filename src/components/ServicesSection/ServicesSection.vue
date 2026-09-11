@@ -1,5 +1,5 @@
 <template>
-  <section id="servicos" class="py-24 px-4 bg-black relative overflow-hidden">
+  <section id="produtos" class="min-h-screen flex flex-col justify-center py-16 px-4 bg-black relative overflow-hidden">
     <!-- Background Effect -->
     <BackgroundEffect />
 
@@ -10,141 +10,117 @@
 
     <div class="container mx-auto relative z-10">
       <!-- Header Section -->
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-scroll="blur" data-delay="1">
+      <div class="text-center mb-8">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" data-scroll="blur" data-delay="1">
           <span class="text-white">Nossos</span>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600"> Serviços</span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600"> Produtos</span>
         </h2>
 
-        <div class="w-32 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mb-8" data-scroll="scale" data-delay="2"></div>
+        <div class="w-32 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto mb-6" data-scroll="scale" data-delay="2"></div>
 
         <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed" data-scroll="fade-up" data-delay="3">
-          <span class="text-purple-400 font-semibold">Um ecossistema completo de growth imobiliário.</span><br>
-          Conteúdo, tráfego, IA e gestão em um só parceiro.
+          <span class="text-purple-400 font-semibold">Tecnologia e IA que viram produto.</span><br>
+          Desenvolvidos e mantidos pela Eknotech.
         </p>
       </div>
 
-      <!-- Services Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <!-- Products Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-        <!-- Service 1: Automação de Processos -->
+        <!-- Produto 1: Gedfy -->
         <div class="group relative" data-scroll="scale-up" data-delay="1">
           <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
-          <div class="relative bg-gray-900/90 p-8 rounded-2xl border border-purple-500/20 h-full transform transition-all duration-500 group-hover:-translate-y-2 group-hover:border-purple-500/40">
+          <div class="relative bg-gray-900/90 p-6 rounded-2xl border border-purple-500/20 h-full flex flex-col transform transition-all duration-500 group-hover:-translate-y-2 group-hover:border-purple-500/40">
+            <!-- Logo -->
+            <div class="h-12 mb-4 flex items-center group-hover:scale-105 transition-transform duration-300 origin-left">
+              <img src="/gedfy-logo-branca.png" alt="Gedfy" class="h-10 w-auto object-contain">
+            </div>
+
+            <p class="text-sm text-purple-400 font-medium mb-3">Gestão de contratos com IA</p>
+            <p class="text-gray-400 leading-relaxed mb-4 flex-grow">
+              Centraliza contratos com IA: contexto certo via RAG, notificações inteligentes, assinatura digital e workspaces por time.
+            </p>
+
+            <router-link to="/produtos/gedfy" class="text-purple-400 font-semibold hover:text-purple-300 transition-colors duration-300 inline-flex items-center">
+              Conhecer produto
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </router-link>
+          </div>
+        </div>
+
+        <!-- Produto 2: Athelium -->
+        <div class="group relative" data-scroll="scale-up" data-delay="2">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
+          <div class="relative bg-gray-900/90 p-6 rounded-2xl border border-purple-500/20 h-full flex flex-col transform transition-all duration-500 group-hover:-translate-y-2 group-hover:border-purple-500/40">
             <!-- Icon -->
-            <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
 
-            <h3 class="text-2xl font-bold text-white mb-4">Criação de Conteúdo</h3>
-            <p class="text-gray-400 leading-relaxed">
-              Vídeos profissionais dos seus imóveis a partir das fotos que você já tem — zero logística. Entrega em até 48h, em formato vertical e horizontal, prontos para redes, portais e anúncios.
+            <h3 class="text-2xl font-bold text-white mb-2">Athelium</h3>
+            <p class="text-sm text-purple-400 font-medium mb-3">Centralizador de contexto para IA</p>
+            <p class="text-gray-400 leading-relaxed mb-4 flex-grow">
+              Documenta os processos da sua empresa e libera esse contexto para conectar, via MCP, a qualquer modelo de IA.
             </p>
-          </div>
-        </div>
 
-        <!-- Service 2: Integração de Sistemas -->
-        <div class="group relative" data-scroll="scale-up" data-delay="2">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
-          <div class="relative bg-gray-900/90 p-8 rounded-2xl border border-purple-500/20 h-full transform transition-all duration-500 group-hover:-translate-y-2 group-hover:border-purple-500/40">
-            <!-- Icon -->
-            <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+            <router-link to="/produtos/athelium" class="text-purple-400 font-semibold hover:text-purple-300 transition-colors duration-300 inline-flex items-center">
+              Conhecer produto
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </div>
-
-            <h3 class="text-2xl font-bold text-white mb-4">Tráfego Pago</h3>
-            <p class="text-gray-400 leading-relaxed">
-              Campanhas no Meta Ads e Google Ads para gerar leads qualificados todos os dias. Otimização semanal e relatório mensal transparente: investimento, custo por lead e resultados — sem caixa preta.
-            </p>
+            </router-link>
           </div>
         </div>
 
-        <!-- Service 3: Automações com IA -->
+        <!-- Produto 3: Gridgen -->
         <div class="group relative" data-scroll="scale-up" data-delay="3">
           <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
-          <div class="relative bg-gray-900/90 p-8 rounded-2xl border border-purple-500/20 h-full transform transition-all duration-500 group-hover:-translate-y-2 group-hover:border-purple-500/40">
-            <!-- Icon -->
-            <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-              </svg>
+          <div class="relative bg-gray-900/90 p-6 rounded-2xl border border-purple-500/20 h-full flex flex-col transform transition-all duration-500 group-hover:-translate-y-2 group-hover:border-purple-500/40">
+            <!-- Badge: mais recente -->
+            <div class="absolute -top-3 right-6 px-3 py-1 bg-purple-600 rounded-full">
+              <span class="text-xs font-semibold text-white">Novo</span>
             </div>
 
-            <h3 class="text-2xl font-bold text-white mb-4">Agente de WhatsApp com IA</h3>
-            <p class="text-gray-400 leading-relaxed">
-              Atendimento 24/7 que responde na hora, qualifica o interesse e coleta os dados do cliente. Sua equipe recebe o lead já filtrado — região, faixa de preço e finalidade — pronto para fechar.
-            </p>
-          </div>
-        </div>
-
-        <!-- Service 4: Workflows Personalizados -->
-        <div class="group relative" data-scroll="scale-up" data-delay="4">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
-          <div class="relative bg-gray-900/90 p-8 rounded-2xl border border-purple-500/20 h-full transform transition-all duration-500 group-hover:-translate-y-2 group-hover:border-purple-500/40">
-            <!-- Icon -->
-            <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-              </svg>
+            <!-- Logo -->
+            <div class="h-12 mb-4 flex items-center group-hover:scale-105 transition-transform duration-300 origin-left">
+              <img src="/gridgen-logo-branca.png" alt="Gridgen" class="h-10 w-auto object-contain">
             </div>
 
-            <h3 class="text-2xl font-bold text-white mb-4">Automação de Redes Sociais</h3>
-            <p class="text-gray-400 leading-relaxed">
-              Agendamento de posts e respostas automáticas de primeiros contatos. Presença constante no Instagram sem consumir o tempo da sua equipe de vendas.
+            <p class="text-sm text-purple-400 font-medium mb-3">Criação de conteúdo para redes sociais com IA</p>
+            <p class="text-gray-400 leading-relaxed mb-4 flex-grow">
+              Cria publicações para Instagram, Facebook, LinkedIn e TikTok com calendário editorial e o contexto da sua marca.
             </p>
-          </div>
-        </div>
 
-        <!-- Service 5: Monitoramento & Suporte -->
-        <div class="group relative" data-scroll="scale-up" data-delay="5">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
-          <div class="relative bg-gray-900/90 p-8 rounded-2xl border border-purple-500/20 h-full transform transition-all duration-500 group-hover:-translate-y-2 group-hover:border-purple-500/40">
-            <!-- Icon -->
-            <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            <router-link to="/produtos/gridgen" class="text-purple-400 font-semibold hover:text-purple-300 transition-colors duration-300 inline-flex items-center">
+              Conhecer produto
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </div>
-
-            <h3 class="text-2xl font-bold text-white mb-4">Gestão de Contratos</h3>
-            <p class="text-gray-400 leading-relaxed">
-              Sistema próprio da eknotech para organizar contratos de aluguel e documentos da operação. Prazos, renovações e arquivos centralizados — sem planilha perdida.
-            </p>
-          </div>
-        </div>
-
-        <!-- Service 6: Consultoria & Diagnóstico -->
-        <div class="group relative" data-scroll="scale-up" data-delay="6">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
-          <div class="relative bg-gray-900/90 p-8 rounded-2xl border border-purple-500/20 h-full transform transition-all duration-500 group-hover:-translate-y-2 group-hover:border-purple-500/40">
-            <!-- Icon -->
-            <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-              </svg>
-            </div>
-
-            <h3 class="text-2xl font-bold text-white mb-4">Consultoria & Diagnóstico</h3>
-            <p class="text-gray-400 leading-relaxed">
-              Análise da sua captação e atendimento atuais, identificação de gargalos e proposta com metas claras. Diagnóstico gratuito, sem compromisso.
-            </p>
+            </router-link>
           </div>
         </div>
 
       </div>
 
-      <!-- CTA Section -->
-      <div class="text-center mt-16" data-scroll="fade-up">
-        <p class="text-gray-400 mb-6 text-lg">
-          Pronto para transformar a captação e as vendas da sua imobiliária?
-        </p>
-        <a href="#contato" class="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-600 hover:from-purple-500 hover:to-purple-500 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/50">
-          Solicitar Proposta
-        </a>
+      <!-- Faixa de tecnologias -->
+      <div class="max-w-6xl mx-auto mt-6" data-scroll="fade-up" data-delay="4">
+        <div class="relative">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-purple-600 rounded-2xl blur opacity-20"></div>
+          <div class="relative bg-gray-900/90 rounded-2xl border border-purple-500/20 p-5 text-center">
+            <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">Tecnologias no core do portfólio</p>
+            <div class="flex flex-wrap items-center justify-center gap-2.5">
+              <span class="px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-sm font-medium">LLMs</span>
+              <span class="px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-sm font-medium">RAG</span>
+              <span class="px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-sm font-medium">Automação</span>
+              <span class="px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-sm font-medium">Agentes de IA</span>
+              <span class="px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-sm font-medium">Integrações via API</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

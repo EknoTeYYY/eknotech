@@ -3,14 +3,10 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Offset para compensar navbar fixa */
+/* Offset para compensar navbar fixa (usado pelo scrollIntoView do
+   useSectionSnapScroll e pelos links de âncora) */
 section[id] {
   scroll-margin-top: 80px;
-}
-
-/* Melhorar performance do scroll */
-* {
-  scroll-behavior: smooth;
 }
 
 /* Prevenir scroll horizontal */

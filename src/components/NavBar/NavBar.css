@@ -112,6 +112,143 @@
 }
 
 /* ========================================
+   DROPDOWN DE PRODUTOS (DESKTOP)
+   ======================================== */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #d4d4d4;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-dropdown-trigger:hover,
+.nav-dropdown-trigger.is-open {
+  color: #ffffff;
+}
+
+.nav-dropdown-trigger::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #7c3aed;
+  transition: width 0.3s ease;
+}
+
+.nav-dropdown-trigger:hover::after,
+.nav-dropdown-trigger.is-open::after {
+  width: 100%;
+}
+
+.chevron-icon {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.chevron-icon.is-open {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  background: rgba(15, 15, 15, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 8px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.nav-dropdown-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-dropdown-icon svg {
+  width: 16px;
+  height: 16px;
+  color: #a78bfa;
+}
+
+.nav-dropdown-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-dropdown-name {
+  color: #ffffff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-dropdown-logo {
+  height: 16px;
+  width: auto;
+}
+
+.nav-dropdown-badge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #7c3aed;
+  padding: 2px 8px;
+  border-radius: 999px;
+  line-height: 1.4;
+}
+
+.nav-dropdown-desc {
+  color: #a1a1a1;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+/* ========================================
    BOTÃO CTA COM INNER GLOW DESLIZANTE
    ======================================== */
 .btn-cta-glow {
@@ -239,7 +376,8 @@
     gap: 20px;
   }
 
-  .nav-link {
+  .nav-link,
+  .nav-dropdown-trigger {
     font-size: 0.9375rem;
   }
 }
@@ -355,6 +493,29 @@
   .mobile-dropdown-link:hover {
     color: #ffffff;
     background: rgba(124, 58, 237, 0.1);
+  }
+
+  .mobile-dropdown-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .mobile-products-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 4px 0 8px;
+  }
+
+  .mobile-products-submenu .nav-dropdown-item {
+    padding: 10px 12px;
   }
 
   .mobile-dropdown-cta {
