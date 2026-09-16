@@ -54,14 +54,11 @@
         <div class="group relative" data-scroll="scale-up" data-delay="2">
           <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-all duration-500"></div>
           <div class="relative bg-gray-900/90 p-6 rounded-2xl border border-purple-500/20 h-full flex flex-col transform transition-all duration-500 group-hover:-translate-y-2 group-hover:border-purple-500/40">
-            <!-- Icon -->
-            <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+            <!-- Logo -->
+            <div class="h-12 mb-4 flex items-center group-hover:scale-105 transition-transform duration-300 origin-left">
+              <img src="/athelium-logo-branca.png" alt="Athelium" class="h-10 w-auto object-contain">
             </div>
 
-            <h3 class="text-2xl font-bold text-white mb-2">Athelium</h3>
             <p class="text-sm text-purple-400 font-medium mb-3">Centralizador de contexto para IA</p>
             <p class="text-gray-400 leading-relaxed mb-4 flex-grow">
               Documenta os processos da sua empresa e libera esse contexto para conectar, via MCP, a qualquer modelo de IA.

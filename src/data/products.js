@@ -14,6 +14,7 @@ export const products = [
     tagline: 'Centralizador de contexto para IA',
     description: 'O Athelium centraliza o contexto da sua empresa para uso com inteligência artificial. Mapeamos e documentamos os processos do seu negócio e disponibilizamos esse conhecimento para conexão via MCP com qualquer modelo de IA, otimizando resultados e reduzindo o custo de criar contexto do zero a cada novo caso de uso.',
     url: 'https://athelium.com.br',
+    logo: '/athelium-logo-branca.png',
     iconPath: 'M13 10V3L4 14h7v7l9-11h-7z'
   },
   {
