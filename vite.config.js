@@ -20,5 +20,14 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  // duas páginas: LP (index.html) e apresentação /growth (growth.html)
+  build: {
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL('./index.html', import.meta.url)),
+        growth: fileURLToPath(new URL('./growth.html', import.meta.url))
+      }
+    }
   }
 })

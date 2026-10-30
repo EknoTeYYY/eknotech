@@ -1,59 +1,45 @@
 <template>
-  <section id="hero" class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden px-4">
-    <!-- Background Effect -->
-    <BackgroundEffect />
-
-    <!-- Grade de fundo com efeito de profundidade -->
-    <div class="grid-overlay"></div>
-
-    <!-- Conteúdo centralizado -->
-    <div class="hero-content relative z-10 text-center max-w-5xl mx-auto" data-scroll="blur">
-      <!-- Título principal -->
-      <h1 class="hero-title" data-scroll="fade-up" data-delay="2">
-        <span class="title-word">Tecnologia</span>
-        <span class="title-word">e</span>
-        <span class="title-word">IA</span>
-        <span class="title-word">para</span>
-        <span class="title-word">empresas</span>
-        <span class="title-word">crescerem</span>
-      </h1>
-
-      <!-- Subtítulo -->
-      <p class="hero-subtitle" data-scroll="fade-up" data-delay="3">
-        Somos a empresa de tecnologia e IA por trás de Gedfy, Athelium e Gridgen.<br>
-        Produtos próprios que automatizam processos e resolvem problemas reais.
-      </p>
-
-      <!-- CTAs -->
-      <div class="cta-buttons" data-scroll="scale-up" data-delay="4">
-        <router-link to="/#contato" class="btn-primary">
-          Falar com a Eknotech
-        </router-link>
-        <router-link to="/#produtos" class="btn-secondary">
-          Ver Nossos Produtos
-        </router-link>
+  <section id="hero" class="hero">
+    <div class="wrap">
+      <div data-scroll="fade-up">
+        <span class="eyebrow">Marketing e tecnologia para imobiliárias</span>
+        <h1>Quem aparece melhor, <span class="roxo">vende primeiro.</span></h1>
+        <p class="sub">Vídeos que valorizam seus imóveis, anúncios que geram leads e atendimento com IA 24/7. Tudo em um só parceiro, do primeiro clique ao contrato assinado.</p>
+        <div class="acoes">
+          <a :href="WHATSAPP_DIAGNOSTICO" target="_blank" rel="noopener noreferrer" class="btn btn-primario">
+            Agendar Diagnóstico Gratuito &nbsp;<i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#como-funciona" class="btn btn-contorno">Ver Como Funciona</a>
+        </div>
+        <div class="selos">
+          <div v-for="selo in selos" :key="selo.titulo" class="selo">
+            <i :class="selo.icone"></i>
+            <div><b>{{ selo.titulo }}</b><span>{{ selo.texto }}</span></div>
+          </div>
+        </div>
       </div>
 
-      <!-- Products Strip -->
-      <div class="companies-carousel-inline" data-scroll="fade-up" data-delay="5">
-        <div class="carousel-wrapper-inline">
-          <div class="carousel-track-inline">
-            <router-link
-              :to="`/produtos/${product.slug}`"
-              class="company-item-inline"
-              v-for="(product, index) in carouselItems"
-              :key="index"
-            >
-              <img v-if="product.logo" :src="product.logo" :alt="product.name" class="company-logo-strip">
-              <template v-else>
-                <span class="company-icon-box">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="product.iconPath" />
-                  </svg>
-                </span>
-                <span class="company-name">{{ product.name }}</span>
-              </template>
-            </router-link>
+      <!-- Publicação conceito: post patrocinado apresentando o lançamento (vídeo real do Zenite) -->
+      <div class="hero-visual" data-scroll="fade-up" data-delay="2">
+        <div class="orbita"></div>
+        <div class="blob"></div>
+        <div class="celular">
+          <div class="post">
+            <div class="post-topo">
+              <div class="post-av"><i class="fa-solid fa-house"></i></div>
+              <div class="post-conta"><b>sua.imobiliaria</b><small>Patrocinado</small></div>
+              <i class="fa-solid fa-ellipsis"></i>
+            </div>
+            <div class="post-midia">
+              <video src="/zenite-reels.mp4" poster="/video-capa.jpg" autoplay muted loop playsinline aria-label="Vídeo de um lançamento imobiliário gerado a partir da planta"></video>
+              <span class="post-selo">Lançamento</span>
+            </div>
+            <div class="post-cta">Quero saber mais <i class="fa-solid fa-chevron-right"></i></div>
+            <div class="post-acoes">
+              <i class="fa-regular fa-heart"></i><i class="fa-regular fa-comment"></i><i class="fa-regular fa-paper-plane"></i>
+              <i class="fa-regular fa-bookmark"></i>
+            </div>
+            <p class="post-legenda"><b>sua.imobiliaria</b> Lançamento no Centro: 3 dormitórios, 2 vagas e área de lazer completa. Agende sua visita.</p>
           </div>
         </div>
       </div>
@@ -62,29 +48,13 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from 'vue'
-import { useScrollAnimation } from '@/composables/useScrollAnimation'
-import BackgroundEffect from '../BackgroundEffect/BackgroundEffect.vue'
-import { products } from '@/data/products'
+import { WHATSAPP_DIAGNOSTICO } from '@/data/contato'
 
-// Repete a lista várias vezes para garantir que o loop infinito do carrossel
-// nunca exponha um vão vazio, mesmo em telas largas
-const carouselItems = Array.from({ length: 8 }, () => products).flat()
+const selos = [
+  { icone: 'fa-solid fa-clapperboard', titulo: 'Vídeos em 48h', texto: 'Das suas fotos' },
+  { icone: 'fa-solid fa-bullseye', titulo: 'Leads todo dia', texto: 'Google e Meta' },
+  { icone: 'fa-solid fa-robot', titulo: 'IA 24/7', texto: 'Resposta na hora' },
+  { icone: 'fa-solid fa-chart-pie', titulo: 'Transparência', texto: 'Relatório mensal' }
+]
 
-const { initScrollAnimations, cleanup: cleanupScrollAnimations } = useScrollAnimation()
-
-onMounted(() => {
-  // Initialize CSS-based scroll animations
-  setTimeout(() => {
-    initScrollAnimations()
-  }, 2500) // Aguarda 2.5s para o splash screen terminar
-})
-
-onUnmounted(() => {
-  cleanupScrollAnimations()
-})
 </script>
-
-<style scoped>
-@import './HeroSection.css';
-</style>

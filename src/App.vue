@@ -1,55 +1,51 @@
 <template>
-  <div>
-    <SplashScreen @complete="onSplashComplete" />
-    <div v-show="showContent" class="min-h-screen bg-black text-white">
-      <NavBar />
-      <router-view />
-      <FooterSection />
-    </div>
+  <div class="lp">
+    <NavBar />
+    <main>
+      <HeroSection />
+      <ToolsStrip />
+      <ServicesSection />
+      <CommitmentsBand />
+      <HowItWorksSection />
+      <PlansSection />
+      <CtaSection />
+    </main>
+    <FooterSection />
   </div>
 </template>
 
 <script setup>
-import { ref, provide } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-import SplashScreen from './components/SplashScreen/SplashScreen.vue'
+import { onMounted, onUnmounted, provide } from 'vue'
 import NavBar from './components/NavBar/NavBar.vue'
+import HeroSection from './components/HeroSection/HeroSection.vue'
+import ToolsStrip from './components/ToolsStrip/ToolsStrip.vue'
+import ServicesSection from './components/ServicesSection/ServicesSection.vue'
+import CommitmentsBand from './components/CommitmentsBand/CommitmentsBand.vue'
+import HowItWorksSection from './components/HowItWorksSection/HowItWorksSection.vue'
+import PlansSection from './components/PlansSection/PlansSection.vue'
+import CtaSection from './components/CtaSection/CtaSection.vue'
 import FooterSection from './components/FooterSection/FooterSection.vue'
+import { useScrollNavigation } from './composables/useScrollNavigation'
+import { useScrollAnimation } from './composables/useScrollAnimation'
 
-const showContent = ref(false)
-const router = useRouter()
-const route = useRoute()
+const { init, cleanup } = useScrollNavigation()
+const { initScrollAnimations, cleanup: cleanupAnimations } = useScrollAnimation()
 
-const onSplashComplete = () => {
-  showContent.value = true
-}
-
-// Função para reiniciar página (voltar para o topo/home e reiniciar animações)
+// Logo do menu: volta ao topo e limpa o hash da URL
 const restartPage = () => {
-  const goHomeAndReset = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-
-    setTimeout(() => {
-      const elementsWithScroll = document.querySelectorAll('[data-scroll]')
-      elementsWithScroll.forEach(el => {
-        el.style.opacity = '0'
-        el.style.transform = 'translateY(20px)'
-
-        setTimeout(() => {
-          el.style.opacity = ''
-          el.style.transform = ''
-        }, 50)
-      })
-    }, 500)
-  }
-
-  if (route.path !== '/') {
-    router.push('/').then(goHomeAndReset)
-  } else {
-    goHomeAndReset()
-  }
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+  window.history.replaceState(null, null, window.location.pathname)
 }
 
-// Prover função para componentes filhos
 provide('restartPage', restartPage)
+
+onMounted(() => {
+  init()
+  initScrollAnimations()
+})
+
+onUnmounted(() => {
+  cleanup()
+  cleanupAnimations()
+})
 </script>

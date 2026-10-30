@@ -19,7 +19,8 @@ COPY --from=builder /app/dist /usr/share/caddy
 
 # Caddyfile mínimo interno (serve /usr/share/caddy com fallback SPA)
 # {path}.html permite links limpos como /growth -> growth.html
-RUN printf ':\nencode zstd gzip\nroot * /usr/share/caddy\ntry_files {path} {path}.html /index.html\nfile_server\n' \
+# /produtos/* eram as páginas da vitrine antiga (estavam no sitemap): 301 para a home
+RUN printf ':\nencode zstd gzip\nredir /produtos/* / permanent\nroot * /usr/share/caddy\ntry_files {path} {path}.html /index.html\nfile_server\n' \
   | sed -e "1s/.*/:${CADDY_ORIGIN_PORT}/" > /etc/caddy/Caddyfile
 
 # (Opcional) healthcheck http

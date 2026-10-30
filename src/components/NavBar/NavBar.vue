@@ -1,163 +1,61 @@
 <template>
-  <nav class="navbar-wrapper">
-    <div class="navbar-floating">
-      <div class="navbar-content">
-        <!-- Logo -->
-        <a href="#" @click.prevent="handleLogoClick" class="navbar-logo" style="cursor: pointer;">
-          <img src="../../assets/logoMenu.png" alt="EknoTech" class="logo-img" draggable="false">
-        </a>
-
-        <!-- Desktop Navigation -->
-        <div class="navbar-links" ref="desktopNavRef">
-          <router-link to="/#quem-somos" class="nav-link">Quem Somos</router-link>
-
-          <div class="nav-dropdown">
-            <button
-              type="button"
-              class="nav-dropdown-trigger"
-              :class="{ 'is-open': isProductsOpen }"
-              @click="isProductsOpen = !isProductsOpen"
-            >
-              Produtos
-              <svg class="chevron-icon" :class="{ 'is-open': isProductsOpen }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            <Transition name="dropdown">
-              <div v-if="isProductsOpen" class="nav-dropdown-panel">
-                <router-link
-                  v-for="product in products"
-                  :key="product.slug"
-                  :to="`/produtos/${product.slug}`"
-                  class="nav-dropdown-item"
-                  @click="isProductsOpen = false"
-                >
-                  <span v-if="!product.logo" class="nav-dropdown-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="product.iconPath" />
-                    </svg>
-                  </span>
-                  <span class="nav-dropdown-text">
-                    <span class="nav-dropdown-name">
-                      <img v-if="product.logo" :src="product.logo" :alt="product.name" class="nav-dropdown-logo">
-                      <template v-else>{{ product.name }}</template>
-                      <span v-if="product.badge" class="nav-dropdown-badge">{{ product.badge }}</span>
-                    </span>
-                    <span class="nav-dropdown-desc">{{ product.tagline }}</span>
-                  </span>
-                </router-link>
-              </div>
-            </Transition>
-          </div>
-
-          <router-link to="/#contato" class="nav-link">Contato</router-link>
-        </div>
-
-        <!-- CTA Button -->
-        <div class="navbar-cta">
-          <router-link to="/#contato" class="btn-cta-glow">
-            <span class="glow-effect"></span>
-            <span class="btn-text">Entrar em Contato</span>
-          </router-link>
-        </div>
-
-        <!-- Mobile Navigation Button -->
-        <div class="mobile-menu-toggle">
-          <button @click="isOpen = !isOpen" class="mobile-menu-btn">
-            <span class="hamburger-line" :class="{ 'open': isOpen }"></span>
-            <span class="hamburger-line" :class="{ 'open': isOpen }"></span>
-            <span class="hamburger-line" :class="{ 'open': isOpen }"></span>
-          </button>
-        </div>
+  <!-- Menu -->
+  <header class="topo">
+    <div class="wrap">
+      <a href="#" class="logo" @click.prevent="irParaTopo">
+        <img src="/logo-roxa.png" alt="eknotech" draggable="false">
+      </a>
+      <nav>
+        <a href="#" :class="{ ativo: !secaoAtiva }" @click.prevent="irParaTopo">Início</a>
+        <a v-for="link in links" :key="link.href" :href="link.href" :class="{ ativo: secaoAtiva === link.href }">{{ link.label }}</a>
+      </nav>
+      <div class="acoes-topo">
+        <a :href="WHATSAPP" target="_blank" rel="noopener noreferrer" class="btn btn-primario btn-pilula">Fale Conosco</a>
+        <button class="menu-btn" :aria-expanded="aberto" aria-label="Abrir menu" @click="aberto = !aberto">
+          <i :class="aberto ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
+        </button>
       </div>
-
-      <!-- Mobile Dropdown Menu -->
-      <Transition name="dropdown">
-        <div v-if="isOpen" class="mobile-dropdown">
-          <nav class="mobile-dropdown-nav">
-            <router-link to="/#quem-somos" @click="isOpen = false" class="mobile-dropdown-link">Quem Somos</router-link>
-
-            <button
-              type="button"
-              class="mobile-dropdown-link mobile-dropdown-toggle"
-              @click="isMobileProductsOpen = !isMobileProductsOpen"
-            >
-              Produtos
-              <svg class="chevron-icon" :class="{ 'is-open': isMobileProductsOpen }" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            <Transition name="dropdown">
-              <div v-if="isMobileProductsOpen" class="mobile-products-submenu">
-                <router-link
-                  v-for="product in products"
-                  :key="product.slug"
-                  :to="`/produtos/${product.slug}`"
-                  class="nav-dropdown-item"
-                  @click="isOpen = false"
-                >
-                  <span v-if="!product.logo" class="nav-dropdown-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="product.iconPath" />
-                    </svg>
-                  </span>
-                  <span class="nav-dropdown-text">
-                    <span class="nav-dropdown-name">
-                      <img v-if="product.logo" :src="product.logo" :alt="product.name" class="nav-dropdown-logo">
-                      <template v-else>{{ product.name }}</template>
-                      <span v-if="product.badge" class="nav-dropdown-badge">{{ product.badge }}</span>
-                    </span>
-                    <span class="nav-dropdown-desc">{{ product.tagline }}</span>
-                  </span>
-                </router-link>
-              </div>
-            </Transition>
-
-            <router-link to="/#contato" @click="isOpen = false" class="mobile-dropdown-link">Contato</router-link>
-            <router-link to="/#contato" @click="isOpen = false" class="mobile-dropdown-cta">Entrar em Contato</router-link>
-          </nav>
-        </div>
-      </Transition>
     </div>
-  </nav>
+    <div class="menu-mobile" :class="{ aberto }">
+      <a v-for="link in links" :key="link.href" :href="link.href" @click="aberto = false">{{ link.label }}</a>
+      <a :href="WHATSAPP" target="_blank" rel="noopener noreferrer" class="roxo" @click="aberto = false">Fale Conosco pelo WhatsApp</a>
+    </div>
+  </header>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, inject } from 'vue'
-import { products } from '@/data/products'
+import { ref, inject, onMounted, onUnmounted } from 'vue'
+import { WHATSAPP } from '@/data/contato'
+import { MENU as links } from '@/data/menu'
 
-const isOpen = ref(false)
-const isProductsOpen = ref(false)
-const isMobileProductsOpen = ref(false)
-const desktopNavRef = ref(null)
+const aberto = ref(false)
+const secaoAtiva = ref('')
+const restartPage = inject('restartPage', () => window.scrollTo({ top: 0, behavior: 'smooth' }))
 
-const restartPage = inject('restartPage', () => {
-  // Fallback se não estiver disponível
-  window.scrollTo({ top: 0, behavior: 'smooth' })
-})
-
-const handleLogoClick = () => {
-  isOpen.value = false // Fechar menu mobile se estiver aberto
+const irParaTopo = () => {
+  aberto.value = false
   restartPage()
 }
 
-const handleClickOutside = (event) => {
-  if (desktopNavRef.value && !desktopNavRef.value.contains(event.target)) {
-    isProductsOpen.value = false
+// Marca no menu a seção que está na tela
+const atualizarAtiva = () => {
+  const y = window.scrollY + 120
+  let atual = ''
+  for (const link of links) {
+    const el = document.querySelector(link.href)
+    if (el && el.offsetTop <= y) atual = link.href
   }
+  // no fim da página, a última seção (Contato) não chega ao topo da tela
+  const noFim = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4
+  secaoAtiva.value = noFim ? links[links.length - 1].href : atual
 }
 
 onMounted(() => {
-  document.addEventListener('click', handleClickOutside)
+  window.addEventListener('scroll', atualizarAtiva, { passive: true })
+  atualizarAtiva()
 })
 
 onUnmounted(() => {
-  document.removeEventListener('click', handleClickOutside)
+  window.removeEventListener('scroll', atualizarAtiva)
 })
 </script>
-
-<style scoped>
-@import './NavBar.css';
-</style>
